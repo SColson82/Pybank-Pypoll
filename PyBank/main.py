@@ -5,6 +5,7 @@ import csv
 total_months=0
 revenue=0
 change=[]
+greatest_profit_increase=0
 
 # Set and open the path
 with open("Resources/budget_data.csv",'r') as budget_data:
@@ -28,8 +29,11 @@ with open("Resources/budget_data.csv",'r') as budget_data:
         ave_rev_change=sum(change)/len(change)
     
         # Find and name the greatest increase in profite (date and amount)
-         
-        
+        # if change in this row is greater than the change in the last row
+        # make this row the row we are keeping
+        if changes > greatest_profit_increase:
+            greatest_profit_increase = changes
+            greatest_profit_inc_mo = row[0]
         # Find the greatest decrease in loss (date and amount)
       
 #  Print the analysis in Terminal
@@ -39,11 +43,11 @@ Financial Analysis
 Total Months: {total_months}
 Total: ${revenue:.2f}
 Average  Change: ${ave_rev_change:.2f}
-Greatest Increase in Profits: Feb-2012 ($1926159)
+Greatest Increase in Profits: {greatest_profit_inc_mo} (${greatest_profit_increase:.2f})
 Greatest Decrease in Profits: Sep-2013 ($-2196167)"""
 
 print(financial_analysis)
 
-# Write to text file
+# Export text file
 with open("Analysis/budget_data.txt","w") as budget_analysis:
     budget_analysis.write(financial_analysis)
