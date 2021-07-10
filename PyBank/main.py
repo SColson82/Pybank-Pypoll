@@ -25,7 +25,7 @@ with open("Resources/budget_data.csv",'r') as budget_data:
 
         # Total number of months in the data set
         total_months += 1
-        
+
         # Net total "Profit/Loss" for the period
         revenue += int(row[1])
         
