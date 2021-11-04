@@ -10,6 +10,6 @@ Set 2: Election data was examined to gather the list of candidates who received 
 
 Contact:
 
-* https://www.linkedin.com/in/sharon-colson-515222210/
+* https://www.linkedin.com/in/sharon-colson
 * sharon.colson@gmail.com
 	
